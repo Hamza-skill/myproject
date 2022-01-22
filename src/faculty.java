@@ -23,21 +23,6 @@ public class faculty extends javax.swing.JFrame {
         initComponents();
     }
     
-public int id(){
-     String  r=id.getText();
-  int rol=Integer.parseInt(r);
-  
-    return rol;
-}
-public String name(){
-    String n=fname.getText();
-    return n;
-}
-public String dept(){
-    String d=fdept.getText();
-    return d;
-}
-    
     
 
     /**
@@ -64,7 +49,6 @@ public String dept(){
         jTablef1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        search = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -153,32 +137,19 @@ public String dept(){
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 38)); // NOI18N
         jLabel1.setText("FOUNDATION SECURITY SYSTEM");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 615, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 635, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
         );
-
-        search.setText("jButton1");
-        search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,9 +161,7 @@ public String dept(){
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fdept, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(search))
+                        .addComponent(fdept, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -201,7 +170,7 @@ public String dept(){
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 8, Short.MAX_VALUE)
@@ -233,17 +202,11 @@ public String dept(){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(fname, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fdept, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(229, 229, 229))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(search)
-                        .addGap(207, 207, 207))))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fdept, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(229, 229, 229))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 6, Short.MAX_VALUE)
@@ -282,28 +245,50 @@ public String dept(){
 
     private void addfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addfActionPerformed
         // TODO add your handling code here:
-        if(id.getText().equals("")||fname.getText().equals("")||fdept.getText().equals("")){
+       if(id.getText().equals("")||fname.getText().equals("")||fdept.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Field missing");
         }
         else{
-try {  
-                 int a = Integer.parseInt(id.getText());
+             try {  
+                 int a =Integer.parseInt(id.getText());
+                 String str=fname.getText();
+                 String dep=fdept.getText();
                  
                  
-                  String data[]={id.getText(),fname.getText(),fdept.getText()};
+                     char[] chars = str.toCharArray();
+                    char[] charss = dep.toCharArray();
+                     
+        for(char c : chars ){
+         if(Character.isDigit(c)){
+            JOptionPane.showMessageDialog(rootPane, "Error in Name field");
+            
+            break;
+         }else{
+               for(char ch : charss ){
+         if(Character.isDigit(ch)){
+             JOptionPane.showMessageDialog(rootPane, "Error in dept field");
+            
+            break;
+         }else{
+             
+             
+                   String data[]={id.getText(),fname.getText(),fdept.getText()};
             DefaultTableModel tbl=(DefaultTableModel)jTablef1.getModel();
             tbl.addRow(data);//row added
-            JOptionPane.showMessageDialog(rootPane,"Student added successfully");
-        }catch(NumberFormatException ex){  
+            JOptionPane.showMessageDialog(rootPane,"Member added successfully");
+           break;
+         }
+               }}
+         break;
+        }}catch(NumberFormatException ex){  
+                        
            JOptionPane.showMessageDialog(rootPane, "Invalid  argumment Entered. Re-enter values again");
             //request for well-formatted string  
         } 
-         
             
-            id.setText("");
-            fname.setText("");
-            fdept.setText("");
+          
         }
+    
     }//GEN-LAST:event_addfActionPerformed
 
     private void dellfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dellfActionPerformed
@@ -345,13 +330,6 @@ try {
         tr.setRowFilter(RowFilter.regexFilter(searchf.getText().trim()));
 
     }//GEN-LAST:event_searchfKeyPressed
-
-    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel tbl=(DefaultTableModel)jTablef1.getModel();
-        
-        
-    }//GEN-LAST:event_searchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,7 +381,6 @@ try {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTablef1;
-    private javax.swing.JButton search;
     private javax.swing.JTextField searchf;
     // End of variables declaration//GEN-END:variables
 }
